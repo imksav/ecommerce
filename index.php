@@ -56,28 +56,56 @@
    </div>
    <!-- header section ends -->
    <!-- featured categories starts -->
+        <?php
+         include_once "./connect.php";
+         $data = mysqli_query($db, "SELECT * FROM products");
+         // print_r($products_featured);
+      ?>
    <div class="categories">
       <div class="small-container">
          <h1 class="title">Featured <span>Products</span></h1>
          <div class="row">
-            <div class="col-3">
-               <img src="./images/gp1.jpg">
-            </div>
-            <div class="col-3">
-               <img src="./images/gp2.jpg">
-            </div>
-            <div class="col-3">
-               <img src="./images/gp3.jpg">
-            </div>
-            <div class="col-3">
-               <img src="./images/gp4.jpg">
-            </div>
-            <div class="col-3">
-               <img src="./images/gp5.jpg">
-            </div>
-            <div class="col-3">
-               <img src="./images/gp6.jpg">
-            </div>
+            <?php
+               while($products_featured = mysqli_fetch_assoc($data)){
+                  if($products_featured['product_featured'] == "Yes"){
+                     ?>
+                    <div class="col-4">
+                           <a href="product_details.php?token=<?php echo $products_featured['id'] ?>"><img src="./admin/<?php echo $products_featured['file_path'] ?>">
+                           <a href="product_details.php?token=<?php echo $products_featured['id'] ?>"><h4><?php echo $products_featured['product_name'] ?></h4>
+                           <?php
+                           if($products_featured['discount_percent']==0){
+                              ?>
+                              <p>Rs. <?php echo $products_featured['marked_price'] - (($products_featured['discount_percent']/100)* $products_featured['marked_price'] );?></p>
+                             <div class="rating">
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star-o"></i>
+                                 <small>(25)</small>
+                              </div>
+                              <?php
+                           }
+                           else{
+                              ?>
+                              <p>Rs. <?php echo $products_featured['marked_price'] - (($products_featured['discount_percent']/100)* $products_featured['marked_price'] );?></p>
+                              <small><del>Rs <?php echo $products_featured['marked_price'] ?></del> | <?php echo $products_featured['discount_percent']."%" ?></small></a>
+                              <div class="rating">
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star-o"></i>
+                                 <small>(25)</small>
+                              </div>
+                              <?php
+                           }
+                           ?>
+                           </div>
+                     <?php
+                  }
+               }
+               ?>
          </div>
       </div>
       <!-- featured categories ends -->
