@@ -18,6 +18,7 @@ include("header.php");
 
 <body>
    <!-- ------------------------------------------Cart items details----------------------------------- -->
+   
    <div class="small-container cart-page">
       <table>
          <tr>
@@ -25,51 +26,32 @@ include("header.php");
             <th>Quantity</th>
             <th>Sub Total</th>
          </tr>
-         <tr>
-            <td>
-               <div class="cart-info">
-                  <img src="./images/gp1.jpg">
-                  <div>
-                     <p>Red Printed T-shirt</p>
-                     <small>Price: Rs. 1,500</small>
-                     <br>
-                     <a href=""><i class="fa fa-trash"></i></a>
-                  </div>
-               </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>Rs.1,500</td>
-         </tr>
-         <tr>
-            <td>
-               <div class="cart-info">
-                  <img src="./images/gp2.jpg">
-                  <div>
-                     <p>Red Printed T-shirt</p>
-                     <small>Price: Rs. 1,500</small>
-                     <br>
-                     <a href=""><i class="fa fa-trash"></i></a>
-                  </div>
-               </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>Rs.1,500</td>
-         </tr>
-         <tr>
-            <td>
-               <div class="cart-info">
-                  <img src="./images/gp5.jpg">
-                  <div>
-                     <p>Red Printed T-shirt</p>
-                     <small>Price: Rs. 1,500</small>
-                     <br>
-                     <a href=""><i class="fa fa-trash"></i></a>
-                  </div>
-               </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>Rs.1,500</td>
-         </tr>
+         <?php 
+            session_start();
+            // session_destroy();
+            // var_dump($_SESSION['cart']);
+            if(isset($_SESSION['cart'])){
+                     for($i=0;$i < count($_SESSION['cart']);$i++) {
+               ?>
+                  <tr>
+                     <td>
+                        <div class="cart-info">
+                           <img src="<?php echo $_SESSION['cart'][$i]['image'] ?>">
+                           <div>
+                              <p><?php echo $_SESSION['cart'][$i]['product_name'] ?></p>
+                              <small>Price: Rs.<?php echo $_SESSION['cart'][$i]['price'] ?></small>
+                              <br>
+                              <a href=""><i class="fa fa-trash"></i></a>
+                           </div>
+                        </div>
+                     </td>
+                     <td><?php echo $_SESSION['cart'][$i]['quantity'] ?></td>
+                     <td>Rs.<?php echo $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'] ?></td>
+                  </tr>
+               <?php
+            }
+            }
+   ?>
       </table>
       <div class="total-price">
          <table>
@@ -94,6 +76,7 @@ include("header.php");
          </table>
       </div>
    </div>
+
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
    include("footer.php");
@@ -111,7 +94,21 @@ include("header.php");
       }
    }
    </script>
+   <!-- <script src="./ap1.js"></script> -->
 
 </body>
 
 </html>
+
+
+
+
+<!-- 
+
+
+   khas ma vako chai k ho session ko ek choti hernu parla
+   ani teo ekchoti add gari sakeko kura lai repeat nahuni hernu parla hai?
+   umm hunxaumm hunxa gardei gar na 
+   khas tyo aadhi time ta session_start na vayera
+   ani
+ -->

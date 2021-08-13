@@ -18,8 +18,8 @@ include("header.php");
 
 <body>
    <?php
-      $token = $_GET['token'];
       if(isset($_GET['token'])){
+       $token = $_GET['token'];
          include_once "./connect.php";
          $data = mysqli_query($db, "SELECT * FROM products WHERE id  = $token");
          //  print_r(mysqli_fetch_assoc($data));
@@ -39,16 +39,19 @@ include("header.php");
                   ?>
                <h5><?php echo $products_details['product_name'] ?></h5>
                <h4>Rs. <?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?></h4>
-               <select>
-                  <option>Select size</option>
-                  <option>XXL</option>
-                  <option>XL</option>
-                  <option>Extra Large</option>
-                  <option>Medium</option>
-                  <option>Small</option>
-               </select>
-               <input type="number" value="1">
-               <a href="" class="btn">Add to Cart</a>
+             <!-- form to pass the details into cart part -->
+               <form action="insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
+                  <input hidden name="price" type="text" value="<?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?>" style="display=none;">
+                  <input hidden name="image" type="text" value="./admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
+                 <select name="select_size" required>
+                    <option value="Extra Large" name="extra_large">Extra Large</option>
+                    <option value="Large" name="large">Large</option>
+                    <option value="Medium" name="medium">Medium</option>
+                    <option value="Small" name="small">Small</option>
+                 </select>
+                 <input name="quantity" type="number" value="1" class="quantity">
+                  <button name="button" class="cart-btn" onclick="handelCart()">Add to Cart</button>
+              </form>
                <h3>Product Details <i class="fa fa-home"></i> </h3>
                <br>
                <p><?php echo $products_details['product_description'] ?></p>
@@ -56,19 +59,23 @@ include("header.php");
                }
                else{
                   ?>
-               <small><del>Rs. <?php echo $products_details['marked_price']."%" ?></del> | <?php echo $products_details['discount_percent']."%" ?></small>
+               <small><del>Rs. <?php echo $products_details['marked_price'] ?></del> | <?php echo $products_details['discount_percent']."%" ?></small>
                <h5><?php echo $products_details['product_name'] ?></h5>
                <h4>Rs. <?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?></h4>
-               <select>
-                  <option>Select size</option>
-                  <option>XXL</option>
-                  <option>XL</option>
-                  <option>Extra Large</option>
-                  <option>Medium</option>
-                  <option>Small</option>
-               </select>
-               <input type="number" value="1">
-               <a href="" class="btn">Add to Cart</a>
+             
+             <!-- form to pass the details into cart part -->
+               <form action="insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
+                  <input hidden name="price" type="text" value="<?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?>" style="display=none;">
+                  <input hidden name="image" type="text" value="./admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
+                 <select name="select_size" required>
+                    <option value="Extra Large" name="extra_large">Extra Large</option>
+                    <option value="Large" name="large">Large</option>
+                    <option value="Medium" name="medium">Medium</option>
+                    <option value="Small" name="small">Small</option>
+                 </select>
+                 <input name="quantity" type="number" value="1" class="quantity">
+                  <button name="button" class="cart-btn" >Add to Cart</button>
+              </form>
                <h3>Product Details <i class="fa fa-home"></i> </h3>
                <br>
                <p><?php echo $products_details['product_description'] ?></p>
@@ -124,3 +131,4 @@ include("header.php");
    </script>
 </body>
 </html>
+<script src="./ap.js"></script>

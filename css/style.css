@@ -355,12 +355,7 @@ select:focus {
 .single-product p {
    color: #000;
    font-size: 15px;
-   /* color: #ff0404; */
 }
-
-/* .single-product, p .price {
-   font-size: 25px;
-} */
 
 .rating .fa {
    color: #f6e86d;
@@ -376,7 +371,7 @@ select:focus {
    margin-top: 20px;
 }
 
-.single-product input {
+.to-cart input {
    width: 50px;
    height: 40px;
    padding-left: 10px;
@@ -388,6 +383,18 @@ select:focus {
 
 .single-product input:focus {
    outline: none;
+}
+
+.to-cart .cart-btn {
+   width: fit-content;
+   background-color: #1070ca;
+   border-radius: 20px;
+   color: white;
+   font-size: 20px;
+   margin-right: 10px;
+   /* border: 1px solid #ff0404; */
+   text-align: center;
+   cursor: pointer;
 }
 
 .single-product .fa {
