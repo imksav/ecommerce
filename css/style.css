@@ -328,6 +328,7 @@ select:focus {
    margin: 5px 0;
    font-size: 22px;
    font-weight: bold;
+   /* color: red; */
 }
 
 .single-product small {
@@ -340,6 +341,13 @@ select:focus {
 
 .single-product h5 {
    color: #000;
+   /* color: #ff0404; */
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.single-product h4 {
+   color: #ff0404;
    font-weight: bold;
    font-size: 20px;
 }
@@ -347,7 +355,12 @@ select:focus {
 .single-product p {
    color: #000;
    font-size: 15px;
+   /* color: #ff0404; */
 }
+
+/* .single-product, p .price {
+   font-size: 25px;
+} */
 
 .rating .fa {
    color: #f6e86d;

@@ -82,7 +82,18 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_featured['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_featured['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -90,13 +101,24 @@
                               ?>
                               <p>Rs. <?php echo $products_featured['marked_price'] - (($products_featured['discount_percent']/100)* $products_featured['marked_price'] );?></p>
                               <small><del>Rs <?php echo $products_featured['marked_price'] ?></del> | <?php echo $products_featured['discount_percent']."%" ?></small></a>
-                              <div class="rating">
+                           <div class="rating">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_featured['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_featured['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -136,7 +158,18 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_men['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_men['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -150,7 +183,18 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_men['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_men['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -184,13 +228,24 @@
                            if($products_women['discount_percent']==0){
                               ?>
                               <p>Rs. <?php echo $products_women['marked_price'] - (($products_women['discount_percent']/100)* $products_women['marked_price'] );?></p>
-                             <div class="rating">
+                            <div class="rating">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_women['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_women['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -198,13 +253,24 @@
                               ?>
                               <p>Rs. <?php echo $products_women['marked_price'] - (($products_women['discount_percent']/100)* $products_women['marked_price'] );?></p>
                               <small><del>Rs <?php echo $products_women['marked_price'] ?></del> | <?php echo $products_women['discount_percent']."%" ?></small></a>
-                              <div class="rating">
+                             <div class="rating">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_women['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_women['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -244,7 +310,18 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_children['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_children['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -252,13 +329,24 @@
                               ?>
                               <p>Rs. <?php echo $products_children['marked_price'] - (($products_children['discount_percent']/100)* $products_children['marked_price'] );?></p>
                               <small><del>Rs <?php echo $products_children['marked_price'] ?></del> | <?php echo $products_children['discount_percent']."%" ?></small></a>
-                              <div class="rating">
+                             <div class="rating">
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
-                                 <small>(25)</small>
+                                 <?php
+                                 if($products_children['product_quantity']==0){
+                                    ?>
+                                    <small>Out of Stock</small>
+                              <?php
+                                 }
+                                 else{
+                                    ?>
+                                    <small>(<?php echo $products_children['product_quantity']?>)</small>
+                                    <?php
+                              }   
+                              ?>
                               </div>
                               <?php
                            }
@@ -272,54 +360,9 @@
          </div>
       </div>
    <!-- ------------------------------------footer starts------------------------------------ -->
-   <div class="footer">
-      <div class="container">
-         <div class="row">
-            <div class="footer-col-1">
-               <h3>WYSIWYG</h3>
-               <p>What You See Is What You Get</p>
-               <div class="app-logo">
-                  <img src="./images/play_store.png">
-                  <img src="./images/app_store.png">
-               </div>
-
-            </div>
-            <div class="footer-col-2">
-               <img src="./images/logo.png" width="100px" height="100px">
-               <p>What You See Is What You Get</p>
-            </div>
-            <div class="footer-col-3">
-               <h3>Useful Links</h3>
-               <ul>
-                  <li><a href="">Home</a></li>
-                  <li><a href="">About Us</a></li>
-                  <li><a href="">Our Products</a></li>
-                  <li><a href="">Contact Us</a></li>
-                  <li><a href="">Downloads</a></li>
-                  <li><a href="">Offers</a></li>
-                  <li><a href="tel:9779869260497">Toll Free</a></li>
-               </ul>
-            </div>
-            <div class="footer-col-4">
-               <h3>Follow Us</h3>
-               <ul>
-                  <li><a href="https://www.facebook.com/imksav/">FaceBook</a></li>
-                  <li><a href="https://www.instagram.com/imksav/">Instagram</a></li>
-                  <li><a href="https://www.linkedin.com/in/imksav/">LinkedIn</a></li>
-                  <li><a href="https://www.github.com/imksav/">GitHub</a></li>
-                  <li><a href="https://www.twitter.com/imksav">Twitter</a></li>
-                  <li><a href="https://www.youtube.com/c/imksav/">YouTube</a></li>
-                  <li><a href="https://www.tiktok.com/@imksav/">TikTok</a></li>
-               </ul>
-            </div>
-
-         </div>
-         <hr>
-         <div class="copyright">
-            <p>© 2021 imksav <i class="fa fa-heart"></i> Made with in Nepal. ❖ All rights reserved.</p>
-         </div>
-      </div>
-   </div>
+     <?php
+   include("footer.php");
+   ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>
    var MenuItems = document.getElementById("MenuItems");

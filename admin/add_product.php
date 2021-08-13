@@ -26,32 +26,29 @@
       <br><input type="radio" name="product_featured" value="Yes" checked>Yes
       <br><input type="radio" name="product_featured" value="No">No
       <br><br>
+      Quantity: <input type="number" name="product_quantity" placeholder="Enter product quantity.............">
+      <br><br>
       Marked Price: <input type="number" name="marked_price" placeholder="Enter marked price.............">
       <br><br>
       Discount Percent: <input type="number" name="discount_percent" placeholder="Enter discount percent.............">
-      <br><br>
-      <!-- Selling Price: <input type="number" name="selling_price" placeholder="Enter selling price............."> -->
       <br><br>
       <p>Select File</p>
       <input type="file" name="fileToUpload" id="fileToUpload">
       <br><br><br>
       <input type="submit" name="upload" value="Submit">
    </form>
-
-
-
-
    
    <!-- PHP CODES -->
  <?php
    $_target_dir = "product_image/";
-   $product_category=$product_brand=$product_name=$product_description=$product_featured=$marked_price=$discount_percent=$selling_price=$file_path="";
+   $product_category=$product_brand=$product_name=$product_description=$product_featured=$product_quantity=$marked_price=$discount_percent=$selling_price=$file_path="";
    if($_SERVER['REQUEST_METHOD']=='POST' and isset($_POST['upload'])){
       $product_category = $_POST['product_category'];
       $product_brand = $_POST['product_brand'];
       $product_name = $_POST['product_name'];
       $product_description = $_POST['product_description'];
       $product_featured = $_POST['product_featured'];
+      $product_quantity = $_POST['product_quantity'];
       $marked_price = $_POST['marked_price'];
       $discount_percent = $_POST['discount_percent'];
       $selling_price = $marked_price - ($marked_price*($discount_percent/100));
@@ -70,7 +67,7 @@
       if($conn->connect_error){
          die("Connection aborted");
       }else{
-         $sql = "INSERT INTO products(product_category, product_brand, product_name, product_description, product_featured, marked_price, discount_percent, file_path)VALUES('$product_category','$product_brand','$product_name','$product_description', '$product_featured', $marked_price, $discount_percent, '$target_file')";
+         $sql = "INSERT INTO products(product_category, product_brand, product_name, product_description, product_featured, product_quantity, marked_price, discount_percent, file_path)VALUES('$product_category','$product_brand','$product_name','$product_description', '$product_featured', $product_quantity, $marked_price, $discount_percent, '$target_file')";
          // echo $sql;
          echo "<br>";
          if($conn->query($sql)==TRUE){

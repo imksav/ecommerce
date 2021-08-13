@@ -40,6 +40,7 @@
          <th>Product Category</th>
          <th>Product Brand</th>
          <th>Featured Products</th>
+         <th>Quantity</th>
          <th>Marked Price</th>
          <th>Discount Percent</th>
          <th>Created Date</th>
@@ -53,6 +54,7 @@
             echo "<td>".$row['product_category']."</td>";
             echo "<td>".$row['product_brand']."</td>";
             echo "<td>".$row['product_featured']."</td>";
+            echo "<td>".$row['product_quantity']."</td>";
             echo "<td>".$row['marked_price']."</td>";
             echo "<td>".$row['discount_percent']."</td>";
             echo "<td>".$row['created_date']."</td>";
