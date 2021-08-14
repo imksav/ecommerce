@@ -30,7 +30,7 @@
             </ul>
          </nav>
          <div class="nav-icon">
-            <a href="./account.php"><img src="./images/user.png" width="25px" height="25px"></a>
+            <a href="./login.php"><img src="./images/user.png" width="25px" height="25px"></a>
             <a href="./cart.php"><img src="./images/cart.png" width="25px" height="25px"></a>
             <img src="./images/menu.png" class="menu-icon" width="25px" height="25px" onclick="menutoggle()">
          </div>

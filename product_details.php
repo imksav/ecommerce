@@ -21,7 +21,7 @@ include("header.php");
       if(isset($_GET['token'])){
        $token = $_GET['token'];
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products WHERE id  = $token");
+         $data = mysqli_query($conn, "SELECT * FROM products WHERE id  = $token");
          //  print_r(mysqli_fetch_assoc($data));
          $products_details = mysqli_fetch_assoc($data);
            ?>

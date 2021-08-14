@@ -35,7 +35,7 @@
                </ul>
             </nav>
             <div class="nav-icon">
-               <a href="./account.php"><img src="./images/user.png" width="25px" height="25px"></a>
+               <a href="./login.php"><img src="./images/user.png" width="25px" height="25px"></a>
                <a href="./cart.php"><img src="./images/cart.png" width="25px" height="25px"></a>
                <img src="./images/menu.png" class="menu-icon" width="25px" height="25px" onclick="menutoggle()">
             </div>
@@ -58,7 +58,7 @@
    <!-- featured categories starts -->
         <?php
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products");
+         $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_featured);
       ?>
    <div class="categories">
@@ -134,7 +134,7 @@
       <!-- Men's Products -->
       <?php
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products");
+         $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_men);
       ?>
       <div class="categories">
@@ -210,7 +210,7 @@
       <!-- Women's Products -->
       <?php
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products");
+         $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_women);
       ?>
       <div class="categories">
@@ -286,7 +286,7 @@
       <!-- Children' Products -->
        <?php
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products");
+         $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_children);
       ?>
       <div class="categories">
@@ -379,4 +379,4 @@
 
 </body>
 
-</html>"></script>
+</html>

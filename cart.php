@@ -32,51 +32,36 @@ include("header.php");
             // var_dump($_SESSION['cart']);
             if(isset($_SESSION['cart'])){
                      for($i=0;$i < count($_SESSION['cart']);$i++) {
+                        $total_price =  $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'];
                ?>
                   <tr>
                      <td>
                         <div class="cart-info">
-                           <img src="<?php echo $_SESSION['cart'][$i]['image'] ?>">
+                           <img src="<?php echo $_SESSION['cart'][$i]['file_path'] ?>">
                            <div>
                               <p><?php echo $_SESSION['cart'][$i]['product_name'] ?></p>
-                              <small>Price: Rs.<?php echo $_SESSION['cart'][$i]['price'] ?></small>
+                              <small>Price: Rs. <?php echo $_SESSION['cart'][$i]['price'] ?></small>
                               <br>
                               <a href=""><i class="fa fa-trash"></i></a>
                            </div>
                         </div>
                      </td>
                      <td><?php echo $_SESSION['cart'][$i]['quantity'] ?></td>
-                     <td>Rs.<?php echo $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'] ?></td>
+                     <td>Rs. <?php echo $_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity'] ?></td>
+                       <tr class="total-price">
+                      <td>Sub Total</td>
+                     <td> <?php echo $total_price ?></td>
+                     </tr>
                   </tr>
                <?php
             }
+            
             }
-   ?>
+ ?>
       </table>
-      <div class="total-price">
-         <table>
-            <tr>
-               <td>
-                  Sub Total
-               </td>
-               <td>Rs. 4,500</td>
-            </tr>
-            <tr>
-               <td>
-                  Vat
-               </td>
-               <td>Rs. 500</td>
-            </tr>
-            <tr>
-               <td>
-                  Grand Total
-               </td>
-               <td>Rs. 5,000</td>
-            </tr>
-         </table>
-      </div>
+   
    </div>
-
+  
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
    include("footer.php");

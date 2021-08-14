@@ -1,6 +1,8 @@
 <?php
 include("header.php");
+include("connect.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,9 @@ include("header.php");
 
 <body>
    <!-- ---------------------Account Page------------------------------------------------ -->
-   <div class="account-page">
+   <h1>Welcome <?php echo $login_session?></h1>
+   <h2><a href="logout.php">Log Out</a></h2>
+   <!-- <div class="account-page">
       <div class="container">
          <div class="row">
             <div class="col-2">
@@ -29,24 +33,51 @@ include("header.php");
                      <span onclick="login()">Log In</span>
                      <span onclick="signup()">Sign Up</span>
                      <hr id="Indicator">
-                     <form id="LoginForm">
-                        <input type="text" placholder="Username">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Log In</button>
+                     <form action="cart.php" id="LoginForm">
+                        <input type="text" name="username" placholder="Username">
+                        <input type="password" name="password" placeholder="Password">
+                        <button type="submit" name="login" class="btn">Log In</button>
                         <a href="">Forget Password</a>
                      </form>
-                      <form id="SignupForm">
-                        <input type="text" placholder="Username">
-                        <input type="text" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Sign Up</button>
+                      <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" id="SignupForm" method="POST">
+                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="email" placeholder="Email" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="text" name="phone" placeholder="Phone" required>
+                        <input type="text" name="address" placeholder="Address" required>
+                        <button type="submit" name="signup" class="btn">Sign Up</button>
                      </form>
-</div>
+                     <?php
+                        $usernname=$password=$email=$phone=$address="";
+                        if($_SERVER['REQUEST_METHOD']=="POST" and isset($_POST['signup'])){
+                           $username = $_POST['username'];
+                           $password = $_POST['password'];
+                           $email = $_POST['email'];
+                           $phone = $_POST['phone'];
+                           $address = $_POST['address'];
+                              if($conn->connect_error){
+                                 die("Connection aborted");
+                              }else{
+                                 $password = md5($password);
+                                 $sql = "INSERT INTO users(username, password, email, phone, address)VALUES('$username', '$password', '$email', '$phone', '$address')";
+                                 echo $sql;
+                                    if($conn->query($sql)==TRUE){
+                                       echo "<h1>Record Inserted!!!</h1>";
+                                       header("location: account.php");
+                                    }else{
+                                       echo "<h1>Insertion error!!!</h1>";
+                                    }
+                              }
+                        }
+
+
+                     ?>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
+   </div> -->
    
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php

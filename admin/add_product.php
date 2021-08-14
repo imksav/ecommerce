@@ -1,3 +1,6 @@
+<!--
+    <?php include("connection.php"); ?> 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +61,9 @@
       echo $target_file;
       echo "<br>";
       move_uploaded_file($_FILES['fileToUpload']['tmp_name'],$target_file);
+       
+         include "./connect.php";
+      
          $servername="localhost";
          $username="root";
          $password="";

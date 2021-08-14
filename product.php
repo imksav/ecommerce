@@ -20,7 +20,7 @@ include("header.php");
 <body>
    <?php
          include_once "./connect.php";
-         $data = mysqli_query($db, "SELECT * FROM products");
+         $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_all);
       ?>
    <div class="small-container">
