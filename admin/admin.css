@@ -1,5 +1,5 @@
 body {
-   font-size: 28px;
+   font-size: 18px;
    text-decoration: none;
 }
 
@@ -65,4 +65,9 @@ img {
 
 img {
    border-radius: 5px 5px 0 0;
+}
+
+form {
+   margin: 20px;
+   font-size: 10px;
 }

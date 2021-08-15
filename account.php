@@ -1,6 +1,6 @@
 <?php
-include("header.php");
-include("connect.php");
+include("./modules/header.php");
+include("./helper/connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include("connect.php");
 
 <body>
    <!-- ---------------------Account Page------------------------------------------------ -->
-   <h1>Welcome <?php echo $login_session?></h1>
+   <h1>Welcome  <?php //echo $login_session['user_login']?></h1>
    <h2><a href="logout.php">Log Out</a></h2>
    <!-- <div class="account-page">
       <div class="container">
@@ -81,7 +81,7 @@ include("connect.php");
    
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

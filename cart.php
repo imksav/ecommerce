@@ -1,5 +1,6 @@
 <?php
-include("header.php");
+include("./modules/header.php");
+include("./helper/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +65,7 @@ include("header.php");
   
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

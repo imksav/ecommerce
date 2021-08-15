@@ -1,16 +1,21 @@
-<!--
-    <?php include("connection.php"); ?> 
--->
+<?php
+include("../helper/connect.php");
+include("admin_header.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="admin.css"> -->
+
    <title>ADD PRODUCTS HERE</title>
 </head>
 <body>
-   <h3>============================Add Products to your database============================</h3>
+      <center>
+         <h3>============================Adding Products On Your Database============================</h3>
+      </center>
    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" method="POST">
       Category: <select name="product_category" id="category">
          <!-- <option value="select the category">Select the Category</option> -->
@@ -23,7 +28,10 @@
       <br><br>
       Product Name: <input type="text" name="product_name" placeholder="Enter product name.............">
       <br><br>
-      Product Description: <input type="text" name="product_description" placeholder="Enter product description.............">
+      Product Description:
+      <br>
+      <textarea name="product_description" placeholder="Enter product description............."  cols="80" rows="5"></textarea>
+      <!-- <input type="text" name="product_description" placeholder="Enter product description............."> -->
       <br><br>
       Is Featured: 
       <br><input type="radio" name="product_featured" value="Yes" checked>Yes
@@ -61,15 +69,7 @@
       echo $target_file;
       echo "<br>";
       move_uploaded_file($_FILES['fileToUpload']['tmp_name'],$target_file);
-       
-         include "./connect.php";
-      
-         $servername="localhost";
-         $username="root";
-         $password="";
-         $db="ecommerce";
-         $conn = new mysqli($servername,$username,$password,$db);
-
+   
       if($conn->connect_error){
          die("Connection aborted");
       }else{

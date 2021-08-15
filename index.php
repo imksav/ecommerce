@@ -1,4 +1,7 @@
 <?php
+ include("./helper/connect.php");
+ $data = mysqli_query($conn, "SELECT * FROM products");
+
    //session_start();
    //if(!isset($_SESSION['user'])) header("Location:./login.php");
 ?>
@@ -55,12 +58,7 @@
       </div>
    </div>
    <!-- header section ends -->
-   <!-- featured categories starts -->
-        <?php
-         include_once "./connect.php";
-         $data = mysqli_query($conn, "SELECT * FROM products");
-         // print_r($products_featured);
-      ?>
+   <!-- featured categories starts -->   
    <div class="categories">
       <div class="small-container">
          <h1 class="title">Featured <span>Products</span></h1>
@@ -133,9 +131,7 @@
       <!-- featured categories ends -->
       <!-- Men's Products -->
       <?php
-         include_once "./connect.php";
          $data = mysqli_query($conn, "SELECT * FROM products");
-         // print_r($products_men);
       ?>
       <div class="categories">
          <div class="small-container">
@@ -209,9 +205,7 @@
       </div>
       <!-- Women's Products -->
       <?php
-         include_once "./connect.php";
          $data = mysqli_query($conn, "SELECT * FROM products");
-         // print_r($products_women);
       ?>
       <div class="categories">
          <div class="small-container">
@@ -285,9 +279,7 @@
       </div>
       <!-- Children' Products -->
        <?php
-         include_once "./connect.php";
          $data = mysqli_query($conn, "SELECT * FROM products");
-         // print_r($products_children);
       ?>
       <div class="categories">
          <div class="small-container">
@@ -361,7 +353,7 @@
       </div>
    <!-- ------------------------------------footer starts------------------------------------ -->
      <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

@@ -1,8 +1,8 @@
 <?php
-include("header.php");
-include("connect.php");
+include("./modules/header.php");
+ include("./helper/connect.php");
 session_start();
-
+$_SESSION['user_login_check'] = "loggedin";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,35 +28,13 @@ session_start();
           <button>Log In</button>
           <p class="message">Not registered yet? <a href="signup.php">Create an account</a></p>
         </form>
-        <?php
-            if($_SERVER['REQUEST_METHOD']=="POST"){
-               $login_username= mysqli_real_escape_string($conn, $_POST['username']);
-               $login_password = mysqli_real_escape_string($conn, $_POST['password']);
-               $login_password = md5($login_password);
-               // echo $login_password;
-               $sql = "SELECT id FROM users WHERE username = '$login_username' and password = '$login_password' ";
-               $result = mysqli_query($conn, $sql);
-               $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-               // $active = $row['active'];
-
-               $count = mysqli_num_rows($result);
-
-               if($count == 1){
-                  // session_register("login_username");
-                  $_SESSION['login_user'] = $login_username;
-                  header("location: cart.php");
-               }else{
-                  ?>
-                  <br><br>
-                  <p style="color:red;">Invalid Username or Password</p>
-                  <?php
-               }
-            }
-        ?>
+        <!-- login module -->
+        <?php include("./helper/login_validate.php");?>
+        <!--  -->
       </div>
     </div>
 <?php
-include("footer.php");
+include("./modules/footer.php");
 ?>
    </body>
 

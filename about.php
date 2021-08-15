@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("./modules/header.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ include("header.php");
    <!-- About Section ends -->
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

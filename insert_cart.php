@@ -1,6 +1,5 @@
 <?php
-   session_start();
-   include_once "./connect.php";
+ include("./helper/connect.php");
    if(isset($_GET['token'])) {
       $token = $_GET['token'];
        $data = mysqli_query($db, "SELECT * FROM products WHERE id  = $token");

@@ -1,5 +1,6 @@
 <?php
-include("header.php");
+include("./modules/header.php");
+ include("./helper/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,6 @@ include("header.php");
    <?php
       if(isset($_GET['token'])){
        $token = $_GET['token'];
-         include_once "./connect.php";
          $data = mysqli_query($conn, "SELECT * FROM products WHERE id  = $token");
          //  print_r(mysqli_fetch_assoc($data));
          $products_details = mysqli_fetch_assoc($data);
@@ -50,7 +50,7 @@ include("header.php");
                     <option value="Small" name="small">Small</option>
                  </select>
                  <input name="quantity" type="number" value="1" class="quantity">
-                  <button name="button" class="cart-btn" onclick="handelCart()">Add to Cart</button>
+                  <button name="button" class="cart-btn" style="padding:10px;">Add to Cart</button>
               </form>
                <h3>Product Details <i class="fa fa-home"></i> </h3>
                <br>
@@ -74,7 +74,7 @@ include("header.php");
                     <option value="Small" name="small">Small</option>
                  </select>
                  <input name="quantity" type="number" value="1" class="quantity">
-                  <button name="button" class="cart-btn" >Add to Cart</button>
+                  <button name="button" class="cart-btn" style="padding:10px;">Add to Cart</button>
               </form>
                <h3>Product Details <i class="fa fa-home"></i> </h3>
                <br>
@@ -94,7 +94,7 @@ include("header.php");
    ?>
    <!-- ------------------------------------footer starts------------------------------------ -->
     <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

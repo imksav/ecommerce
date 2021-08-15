@@ -1,5 +1,7 @@
 <?php
-include("header.php");
+include("./modules/header.php");
+include("./helper/connect.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,6 @@ include("header.php");
 
 <body>
    <?php
-         include_once "./connect.php";
          $data = mysqli_query($conn, "SELECT * FROM products");
          // print_r($products_all);
       ?>
@@ -108,7 +109,7 @@ include("header.php");
    </div>
    <!-- ------------------------------------footer starts------------------------------------ -->
   <?php
-   include("footer.php");
+   include("./modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

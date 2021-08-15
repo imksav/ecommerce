@@ -1,4 +1,10 @@
+<?php
+include("admin_header.php");
+?>
 <!DOCTYPE html>
+<?php
+include("../helper/connect.php");
+?>
 <html lang="en">
    <head>
       <title>Display Details From File Upload</title>
@@ -18,13 +24,10 @@
    </style>
    </head>
    <body>
-   
+      <center>
+         <h3>============================Displaying Products On Your Database============================</h3>
+      </center>
    <?php
-   $servername="localhost";
-   $username="root";
-   $password="";
-   $db="ecommerce";
-   $conn = new mysqli($servername,$username,$password,$db);
    if($conn->connect_error){
       die("Connection aborted");
    }else{
@@ -45,6 +48,7 @@
          <th>Discount Percent</th>
          <th>Created Date</th>
          <th>Profile Picture</th>
+         <th colspan=2>Action</th>
          </tr>";
          while($row=$result->fetch_assoc()){
             echo "<tr>";
@@ -59,6 +63,8 @@
             echo "<td>".$row['discount_percent']."</td>";
             echo "<td>".$row['created_date']."</td>";
             echo "<td><img src='".$row['file_path']."' height=150px width=150px</td>";
+            echo "<td><a href='update_product.php?token=".$row['id']."'>Update</a></td>";
+            echo "<td><a href='delete_product.php?token=".$row['id']."'>Delete</a></td>";
             echo "</tr>";
          }
          echo "</table>";
