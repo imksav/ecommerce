@@ -14,7 +14,7 @@
                if($count == 1){
                   // session_register("login_username");
                   $_SESSION['user_login_check'] = $login_username;
-                  header("location: cart.php");
+                  header("location: ./cart.php");
                }else{
                   ?>
                   <br><br>

@@ -1,6 +1,6 @@
 <?php
-include("./modules/header.php");
- include("./helper/connect.php");
+include("../modules/header.php");
+ include("../helper/connect.php");
 session_start();
 $_SESSION['user_login_check'] = "loggedin";
 ?>
@@ -10,7 +10,9 @@ $_SESSION['user_login_check'] = "loggedin";
       <title>Login Page</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/login.css" rel="stylesheet">
+      <link href="../css/login.css" rel="stylesheet">
+      <link href="../css/style.css" rel="stylesheet">
+
    </head>
    <body>
    <body>
@@ -29,12 +31,12 @@ $_SESSION['user_login_check'] = "loggedin";
           <p class="message">Not registered yet? <a href="signup.php">Create an account</a></p>
         </form>
         <!-- login module -->
-        <?php include("./helper/login_validate.php");?>
+        <?php include("../helper/login_validate.php");?>
         <!--  -->
       </div>
     </div>
 <?php
-include("./modules/footer.php");
+include("../modules/footer.php");
 ?>
    </body>
 

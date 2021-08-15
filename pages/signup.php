@@ -1,6 +1,6 @@
 <?php
-include("./modules/header.php");
-include("./helper/connect.php");
+include("../modules/header.php");
+include("../helper/connect.php");
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,8 @@ include("./helper/connect.php");
       <title>Sign Page</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/login.css" rel="stylesheet">
+      <link href="../css/login.css" rel="stylesheet">
+      <link href="../css/style.css" rel="stylesheet">
    </head>
    <body>
    <body>
@@ -31,12 +32,12 @@ include("./helper/connect.php");
                       <p class="message">Already registered? <a href="login.php">Log In</a></p>
                   </form>
                   <!-- signup module -->
-                 <?php include("./helper/signup_validate.php") ?>
+                 <?php include("../helper/signup_validate.php") ?>
                  <!--  -->
       </div>
     </div>
 <?php
-include("./modules/footer.php");
+include("../modules/footer.php");
 ?>
    </body>
 
