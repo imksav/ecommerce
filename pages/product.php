@@ -1,6 +1,6 @@
 <?php
-include("./modules/header.php");
-include("./helper/connect.php");
+include("../modules/header.php");
+include("../helper/connect.php");
 
 ?>
 
@@ -11,7 +11,7 @@ include("./helper/connect.php");
    <title>Product | WYSIWYG</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="./css/style.css" rel="stylesheet">
+   <!-- <link href="../css/style.css" rel="stylesheet"> -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="">
@@ -40,7 +40,7 @@ include("./helper/connect.php");
                   if($products_all['product_category'] == "men" || $products_all['product_category'] == "women" || $products_all['product_category'] == "child"){
                      ?>
                     <div class="col-4">
-                           <a href="product_details.php?token=<?php echo $products_all['id'] ?>"><img src="./admin/<?php echo $products_all['file_path'] ?>">
+                           <a href="product_details.php?token=<?php echo $products_all['id'] ?>"><img src="../admin/<?php echo $products_all['file_path'] ?>">
                            <a href="product_details.php?token=<?php echo $products_all['id'] ?>"><h4><?php echo $products_all['product_name'] ?></h4>
                            <?php
                            if($products_all['discount_percent']==0){
@@ -109,7 +109,7 @@ include("./helper/connect.php");
    </div>
    <!-- ------------------------------------footer starts------------------------------------ -->
   <?php
-   include("./modules/footer.php");
+   include("../modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>

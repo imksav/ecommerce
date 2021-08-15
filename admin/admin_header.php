@@ -30,9 +30,10 @@ li a:hover {
 <body>
 
 <ul>
-  <li><a class="active" href="index.php">Home</a></li>
+  <li><a class="active" href="index.php">Back End</a></li>
   <li><a href="add_product.php">Add</a></li>
   <li><a href="display_product.php">Display</a></li>
+  <li><a href="../pages/index.php">Front End</a></li>
 </ul>
 
 </body>

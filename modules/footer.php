@@ -13,13 +13,13 @@
                <h3>WYSIWYG</h3>
                <p>What You See Is What You Get</p>
                <div class="app-logo">
-                  <img src="./images/play_store.png">
-                  <img src="./images/app_store.png">
+                  <img src="../images/play_store.png">
+                  <img src="../images/app_store.png">
                </div>
 
             </div>
             <div class="footer-col-2">
-               <img src="./images/logo.png" width="100px" height="100px">
+               <img src="../images/logo.png" width="100px" height="100px">
                <p>What You See Is What You Get</p>
             </div>
             <div class="footer-col-3">

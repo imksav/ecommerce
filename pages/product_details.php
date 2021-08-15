@@ -1,6 +1,6 @@
 <?php
-include("./modules/header.php");
- include("./helper/connect.php");
+include("../modules/header.php");
+ include("../helper/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,6 @@ include("./modules/header.php");
    <title>Product Details | WYSIWYG</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="./css/style.css" rel="stylesheet">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="">
@@ -29,7 +28,7 @@ include("./modules/header.php");
          <div class="small-container single-product">
          <div class="row">
             <div class="col-2">
-               <img src="./admin/<?php echo $products_details['file_path'] ?>" width="70%" height="100%" id="ProductImg">
+               <img src="../admin/<?php echo $products_details['file_path'] ?>" width="70%" height="100%" id="ProductImg">
             </div>
             <div class="col-2">
                <h6><?php echo $products_details['product_brand']?></h6>
@@ -88,13 +87,13 @@ include("./modules/header.php");
       <?php
    }
    else{
-            echo "404 - Page Not Found";
-            echo "<button>Back</button>";
+            echo "<center><h1 style='padding-top:100px; height:600px;'>404 - Page Not Found</h1></center>";
+            // echo "<button>Back</button>";
          }
    ?>
    <!-- ------------------------------------footer starts------------------------------------ -->
     <?php
-   include("./modules/footer.php");
+   include("../modules/footer.php");
    ?>
    <!-- ------------------------ JS for menu toggle --------------------------------- -->
    <script>
