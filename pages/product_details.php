@@ -39,9 +39,9 @@ include("../modules/header.php");
                <h5><?php echo $products_details['product_name'] ?></h5>
                <h4>Rs. <?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?></h4>
              <!-- form to pass the details into cart part -->
-               <form action="insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
+               <form action="./insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
                   <input hidden name="price" type="text" value="<?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?>" style="display=none;">
-                  <input hidden name="image" type="text" value="./admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
+                  <input hidden name="image" type="text" value="../admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
                  <select name="select_size" required>
                     <option value="Extra Large" name="extra_large">Extra Large</option>
                     <option value="Large" name="large">Large</option>
@@ -63,9 +63,9 @@ include("../modules/header.php");
                <h4>Rs. <?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?></h4>
              
              <!-- form to pass the details into cart part -->
-               <form action="insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
+               <form action="./insert_cart.php?token=<?php echo $products_details['id']?>" class="to-cart" method="POST">
                   <input hidden name="price" type="text" value="<?php echo $products_details['marked_price'] - ($products_details['discount_percent']/100)* $products_details['marked_price'] ?>" style="display=none;">
-                  <input hidden name="image" type="text" value="./admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
+                  <input hidden name="image" type="text" value="../admin/<?php echo $products_details['file_path'] ?>" style="display=none;">
                  <select name="select_size" required>
                     <option value="Extra Large" name="extra_large">Extra Large</option>
                     <option value="Large" name="large">Large</option>
@@ -100,34 +100,33 @@ include("../modules/header.php");
    var MenuItems = document.getElementById("MenuItems");
    MenuItems.style.maxHeight = "0px";
 
-   function menutoggle() {
-      if (MenuItems.style.maxHeight == "0px") {
-         MenuItems.style.maxBlockSize = "200px";
-      } else {
-         MenuItems.style.maxHeight = "0px";
-      }
-   }
+   // function menutoggle() {
+   //    if (MenuItems.style.maxHeight == "0px") {
+   //       MenuItems.style.maxBlockSize = "200px";
+   //    } else {
+   //       MenuItems.style.maxHeight = "0px";
+   //    }
+   // }
    </script>
 
 
 
    <!-- ----------------------------JS for product gallery---------------------------- -->
    <script>
-   var ProductImg = document.getElementById("ProductImg");
-   var SmallImg = document.getElementsByClassName("small-img");
-   SmallImg[0].onclick = function() {
-      ProductImg.src = SmallImg[0].src;
-   }
-   SmallImg[1].onclick = function() {
-      ProductImg.src = SmallImg[1].src;
-   }
-   SmallImg[2].onclick = function() {
-      ProductImg.src = SmallImg[2].src;
-   }
-   SmallImg[3].onclick = function() {
-      ProductImg.src = SmallImg[3].src;
-   }
+   // var ProductImg = document.getElementById("ProductImg");
+   // var SmallImg = document.getElementsByClassName("small-img");
+   // SmallImg[0].onclick = function() {
+   //    ProductImg.src = SmallImg[0].src;
+   // }
+   // SmallImg[1].onclick = function() {
+   //    ProductImg.src = SmallImg[1].src;
+   // }
+   // SmallImg[2].onclick = function() {
+   //    ProductImg.src = SmallImg[2].src;
+   // }
+   // SmallImg[3].onclick = function() {
+   //    ProductImg.src = SmallImg[3].src;
+   // }
    </script>
 </body>
 </html>
-<script src="./ap.js"></script>

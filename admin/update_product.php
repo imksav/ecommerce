@@ -79,21 +79,21 @@ include("admin_header.php");
          <option value="child" name="child">Child's</option>
       </select>
       <br><br>
-      Brand: <input type="text" name="product_brand" placeholder="<?php echo $result['product_brand'] ?>">
+      Brand: <input type="text" name="product_brand" value="<?php echo $result['product_brand'] ?>">
       <br><br>
-      Product Name: <input type="text" name="product_name" placeholder="<?php echo $result['product_name'] ?>">
+      Product Name: <input type="text" name="product_name" value="<?php echo $result['product_name'] ?>">
       <br><br>
-      Product Description: <input type="text" name="product_description" placeholder="<?php echo $result['product_description'] ?>">
+      Product Description: <input type="text" name="product_description" value="<?php echo $result['product_description'] ?>">
       <br><br>
       Is Featured: 
-      <br><input type="radio" name="product_featured" value="Yes" checked>Yes
+      <br><input type="radio" name="product_featured" value="Yes">Yes
       <br><input type="radio" name="product_featured" value="No">No
       <br><br>
-      Quantity: <input type="number" name="product_quantity" placeholder="<?php echo $result['product_quantity'] ?>">
+      Quantity: <input type="number" name="product_quantity" value="<?php echo $result['product_quantity'] ?>">
       <br><br>
-      Marked Price: <input type="number" name="marked_price" placeholder="<?php echo $result['marked_price']?>">
+      Marked Price: <input type="number" name="marked_price" value="<?php echo $result['marked_price']?>">
       <br><br>
-      Discount Percent: <input type="number" name="discount_percent" placeholder="<?php echo $result['product_quantity'] ?>">
+      Discount Percent: <input type="number" name="discount_percent" value="<?php echo $result['product_quantity'] ?>">
       <br><br>
       <p>Select File</p>
       <input type="file" name="fileToUpload" id="fileToUpload">
