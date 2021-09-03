@@ -17,9 +17,9 @@
          $status = "pending";
          // $item_price = $products_details['marked_price']-($products_details['discount_percent']*$products_details['marked_price']);
          $item_price = $_POST['price'];
-         $price_with_vat = $quantity * ($item_price + ($item_price*0.13));
+         // $price_with_vat = $quantity * ($item_price + ($item_price*0.13));
          $file_path = $products_details['file_path'];
-            $sql = " INSERT INTO  cart VALUES (NULL, $user_id,  '$product_name', '$quantity', '$size', '$quantity'*'$item_price', '$file_path', '$status')";
+            $sql = " INSERT INTO  cart VALUES (NULL, $token, $user_id,  '$product_name', '$quantity', '$size', '$quantity'*'$item_price', '$file_path', '$status')";
             echo $sql;
             $run = mysqli_query($conn, $sql);
             if($run){

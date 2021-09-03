@@ -2,15 +2,19 @@
 include("../helper/connect.php");
 
 $user_id = $_GET['token'];
-// echo $user_id;
-// echo "<br>";
+echo $user_id."<br>";
+// if($_SERVER['REQUEST_METHOD']=='POST' and isset($_POST['checkout']) and isset($_POST['product_id'])){
+//  $product_id = $_POST['product_id'];
+//                   $get_quantity = "SELECT product_quantity FROM products WHERE id=$product_id";
+//                   echo "<br>".$get_quantity;
+// }
 $sql = "SELECT * from cart WHERE user_id = $user_id";
 echo $sql;
 $result = $conn->query($sql);
  if($result->num_rows>0){
      echo "<table>
          <tr>
-         <th>ID</th>
+         <th>Product ID</th>
          <th>User ID</th>
          <th>Product Name</th>
          <th>Quantity</th>
@@ -20,66 +24,71 @@ $result = $conn->query($sql);
          </tr>";
          while($row=$result->fetch_assoc()){
             $total_price = $row['price'];
-            $f_p = $total_price + (0.13*$total_price);
+            $final_price = $total_price + (0.13*$total_price);
             echo "<tr>";
-            echo "<td>".$row['id']."</td>";
+            echo "<td>".$row['product_id']."</td>";
             echo "<td>".$row['user_id']."</td>";
             echo "<td>".$row['product_name']."</td>";
             echo "<td>".$row['product_quantity']."</td>";
-            echo "<td>".$f_p."</td>";
+            echo "<td>".$final_price."</td>";
             // echo "<td>".$row['price']."."*$row['product_quantity']."</td>";
             echo "<td>".$row['status']."</td>";
-            // echo "<td><a href='order_success.php?token=".$row['user_id']."'>Confirm</a></td>";
-            // echo "<td><a href='cart.php'>Cancel</a></td>";
+            echo "<td><a href='order_success.php?token=".$row['user_id']."'>Confirm</a></td>";
+            echo "<td><a href='cart.php'>Cancel</a></td>";
             echo "</tr>";
          }
          echo "</table>";
       }
-      // $user_id="";
-      if($_SERVER['REQUEST_METHOD']=='POST' and isset($_POST['confirm'])){
-      $user_id = $_POST['user_id'];
-      $id = $_POST['id'];
+      if($_SERVER['REQUEST_METHOD']=='POST' and isset($_POST['checkout']) and isset($_POST['product_id']) and isset($_POST['price']) and isset($_POST['product_quantity'])){
+      $user_id = $_GET['token'];
+      $product_id = $_POST['product_id'];
       $product_quantity = $_POST['product_quantity'];
+      $product_price = $_POST['price'];
       $status = "confirmed";
-      // $total_price = $_POST['price'];
-      // echo $total_price;
-      // $f_p = $total_price + ($total_price*0.13);
-      // $total_price = $price;
-      $confirm = "UPDATE cart SET status='$status' WHERE user_id=$user_id";
-      // $product_quantity = "UPDATE products SET product_quantity='$select_product_quantity-$product_quantity' WHERE id=$id";
+      $confirm = "UPDATE cart SET status='$status', price='$product_price' WHERE user_id=$user_id and product_id=$product_id";
        if($conn->query($confirm)==TRUE){
-      $select_product_quantity = "SELECT product_quantity FROM products WHERE id=$id";
-      if($conn->query($select_product_quantity)==TRUE){
-            echo "<h1>Record Updated</h1>";
-            echo $select_product_quantity;
-            header("location: cart.php");
-      }else{
-         echo "<h1>Error Occured</h1>";
-            echo $select_product_quantity;
-      }
             echo $confirm;
             echo "<h1>Record Updated</h1>";
-            header("location: cart.php");
+            // if($status="confirmed"){
+            $select_product_quantity = "SELECT * FROM products WHERE id=$product_id";
+            $result = $conn->query($select_product_quantity);
+            if($result->num_rows>0){
+               // while($row=$result->fetch_assoc()){
+                  $row =$result->fetch_assoc();
+            print_r($row);
+                  $product_id = $row['id'];
+                  $initial_quantity = $row['product_quantity'];
+                  $recent_quantity = $product_quantity;
+                  $final_quantity = $initial_quantity-$recent_quantity;
+                  $update_products_quantity = "UPDATE products SET product_quantity='$final_quantity' WHERE id=$product_id";
+                  if($conn->query($update_products_quantity)==TRUE){
+                     // echo $update_products_quantity;
+                     header("location: checkout.php");
+                  }
+            }
+               // }
+               }
          }else{
             echo "<h1>Error Occured</h1>";
-            echo $confirm;
+            // echo $confirm;
          }
-      }
 ?>
+<!-- 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
-   <input hidden type="text" name="user_id" value="<?php echo $user_id?>">
-   <input hidden type="text" name="id" value="<?php echo $id?>">
-   <input hidden type="text" name="product_quantity" value="<?php echo $product_quantity?>">
-   <input type="submit" name="confirm" value="Confirm">
-</form>   
-</body>
+   <?php// htmlspecialchars($_SERVER['PHP_SELF']);?>
+<form action="cart.php" method="POST">
+   <input hidden type="text" name="user_id" value="<?php //echo $user_id?>"> -->
+   <!-- <input hidden type="text" name="product_id" value="<?php //echo $product_id?>"> -->
+   <!-- <input hidden type="text" name="product_quantity" value="<?php //echo $product_quantity?>"> -->
+   <!-- <input type="submit" name="confirm" value="Confirm"> -->
+<!-- </form>    -->
+<!-- </body> -->
 
-</html>
+<!-- </html> -->
 
 
 <!--
@@ -134,4 +143,4 @@ $result = $conn->query($sql);
 //          }
 //         } 
 //       }
-?> -->
+?>

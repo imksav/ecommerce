@@ -40,7 +40,7 @@
          header("Location: ./login.php");
          }
          $user_id=$_SESSION['id'];
-          $data = mysqli_query($conn, "SELECT * FROM cart WHERE user_id=$user_id");
+          $data = mysqli_query($conn, "SELECT * FROM cart WHERE user_id=$user_id and status='confirmed'  ORDER BY 1 ASC");
             $total_price = 0;
             $vat = 13;
             $count=0;

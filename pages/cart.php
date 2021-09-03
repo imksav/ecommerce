@@ -28,6 +28,7 @@ include("../helper/connect.php");
             <th>Product</th>
             <th>Quantity</th>
             <th>Sub Total</th>
+            <th>Action</th>
          </tr>
          <?php 
          $user_id = $_SESSION['id'];
@@ -55,29 +56,20 @@ include("../helper/connect.php");
                      </td>
                      <td><?php echo $cart['product_quantity'] ?></td>
                      <td>Rs. <?php echo $cart['price'] ?></td>
+                     <td>
+                        <form action="confirm_order.php?token=<?php echo $user_id?>" method="POST">
+                           <input hidden type="text" name="price" value="<?php echo ($cart['price'] + $cart['price']* ($vat/100)) ?>">
+                           <input hidden type="text" name="product_id" value="<?php echo $row['product_id'] ?>">
+                           <input hidden type="text" name="product_quantity" value="<?php echo $row['product_quantity'] ?>">
+                           <!-- <input hidden type="text" name="id" value=> -->
+                           <input type="submit" name="checkout" value="Check Out">
+                        </form>
+                     </td>
                   </tr>
                <?php
-               $total_price = $total_price+($cart['price']);
+               // $total_price = $total_price+($cart['price']);
             }
             ?>
-            <table>
-         <br><br>
-               <tr>
-                  <th>Total</th>
-                  <th>VAT Amount (<?php echo $vat?>%)</th>
-                  <th>Grand Total</th>
-                  <th>Action</th>
-               </tr>
-               <tr>
-                  <td>Rs. <?php echo $total_price ?></td>
-                  <td>Rs. <?php echo $total_price* ($vat/100) ?></td>
-                  <td>Rs. <?php echo $total_price + $total_price* ($vat/100) ?></td>
-                  <td>
-                     <form action="confirm_order.php?token=<?php echo $user_id?>" method="POST">
-                     <input hidden type="text" name="price" value="<?php echo ($total_price + $total_price* ($vat/100)) ?>">
-                     <!-- <input hidden type="text" name="id" value=> -->
-                     <input type="submit" value="Confirm Order">
-                     </form>
                </tr>
             </table>
       </table>
@@ -87,6 +79,9 @@ include("../helper/connect.php");
                   ?>
                   <div style="margin:20px; text-align:center;">
                        <p>You don't have anything on your cart. Please add products to cart!!!</p>
+                       <?php
+                       header("Location: login.php");
+                       ?>
                   </div>
 
                <?php
