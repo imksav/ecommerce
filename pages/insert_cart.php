@@ -11,15 +11,15 @@
       $products_details = mysqli_fetch_assoc($data);
 // && isset($_POST['price']) && isset($_POST['image'])
       if(isset($_POST['select_size']) && isset($_POST['quantity']) && isset($_POST['button']) && isset($_POST['price'])) {
-         
          $size =  $_POST['select_size'];
          $quantity = $_POST['quantity'];
          $product_name = $products_details['product_name'];
          $status = "pending";
          // $item_price = $products_details['marked_price']-($products_details['discount_percent']*$products_details['marked_price']);
          $item_price = $_POST['price'];
+         $price_with_vat = $quantity * ($item_price + ($item_price*0.13));
          $file_path = $products_details['file_path'];
-            $sql = " INSERT INTO  cart VALUES (NULL, $user_id,  '$product_name', '$quantity', '$size', '$item_price', '$file_path', '$status')";
+            $sql = " INSERT INTO  cart VALUES (NULL, $user_id,  '$product_name', '$quantity', '$size', '$quantity'*'$item_price', '$file_path', '$status')";
             echo $sql;
             $run = mysqli_query($conn, $sql);
             if($run){

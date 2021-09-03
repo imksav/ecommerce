@@ -42,7 +42,7 @@ include("../helper/connect.php");
                            <img src="../admin/<?php echo $cart['image'] ?>">
                            <div>
                               <p><?php echo $cart['product_name'] ?></p>
-                              <small>Price: Rs. <?php echo $cart['price'] ?></small>
+                              <small>Price: Rs. <?php echo ($cart['price']/$cart['product_quantity']) ?></small>
                               <br>
                               <small><?php echo $cart['size'] ?></small>
                               <br>
@@ -54,10 +54,10 @@ include("../helper/connect.php");
                         </div>
                      </td>
                      <td><?php echo $cart['product_quantity'] ?></td>
-                     <td>Rs. <?php echo $cart['price'] * $cart['product_quantity'] ?></td>
+                     <td>Rs. <?php echo $cart['price'] ?></td>
                   </tr>
                <?php
-               $total_price = $total_price+($cart['price']*$cart['product_quantity']);
+               $total_price = $total_price+($cart['price']);
             }
             ?>
             <table>
@@ -74,8 +74,8 @@ include("../helper/connect.php");
                   <td>Rs. <?php echo $total_price + $total_price* ($vat/100) ?></td>
                   <td>
                      <form action="confirm_order.php?token=<?php echo $user_id?>" method="POST">
-                     <input hidden type="text" value=<?php echo $total_price ?>>
-                     <input hidden type="text" value="<?php echo $user_id?>">
+                     <input hidden type="text" name="price" value="<?php echo ($total_price + $total_price* ($vat/100)) ?>">
+                     <!-- <input hidden type="text" name="id" value=> -->
                      <input type="submit" value="Confirm Order">
                      </form>
                </tr>
