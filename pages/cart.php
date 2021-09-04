@@ -56,15 +56,14 @@ include("../helper/connect.php");
                      </td>
                      <td><?php echo $cart['product_quantity'] ?></td>
                      <td>Rs. <?php echo $cart['price'] ?></td>
-                     <td>
-                        <form action="confirm_order.php?token=<?php echo $user_id?>" method="POST">
-                           <input hidden type="text" name="price" value="<?php echo ($cart['price'] + $cart['price']* ($vat/100)) ?>">
-                           <input hidden type="text" name="product_id" value="<?php echo $row['product_id'] ?>">
-                           <input hidden type="text" name="product_quantity" value="<?php echo $row['product_quantity'] ?>">
-                           <!-- <input hidden type="text" name="id" value=> -->
+                     <!-- <td>
+                        <form action="confirm_order.php?token=<?php //echo $user_id?>" method="POST">
+                           <input hidden type="text" name="price" value="<?php// echo ($cart['price'] + $cart['price']* ($vat/100)) ?>">
+                           <input hidden type="text" name="product_id" value="<?php //echo $row['product_id'] ?>">
+                           <input hidden type="text" name="product_quantity" value="<?php// echo $row['product_quantity'] ?>">
                            <input type="submit" name="checkout" value="Check Out">
                         </form>
-                     </td>
+                     </td> -->
                   </tr>
                <?php
                // $total_price = $total_price+($cart['price']);
@@ -72,6 +71,9 @@ include("../helper/connect.php");
             ?>
                </tr>
             </table>
+                        <form action="view_order.php?token=<?php echo $user_id?>" method="POST">
+                           <input type="submit" name="view" value="Check Out">
+                        </form>
       </table>
    </div>
                   <?php
