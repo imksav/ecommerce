@@ -28,11 +28,6 @@
                <a href="index.php"><img src="../images/logo.png" width="125px"></a>
                <?php
                 session_start();
-               if(isset($_SESSION['user_login_check'])) {
-                  ?>
-                     <p style="color: purple;  font-size: 20px;">Welcome, <?php echo  $_SESSION['user_login_check']; ?>!</p>
-                  <?php
-               }
             ?>
                <!-- <form action="search.php" method="POST">
                   <input type="text" name="query">

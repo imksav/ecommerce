@@ -108,7 +108,14 @@
    </table>
    </div>
    <div class="action" style="text-align:center;">
-   <button>Print Bill</button>
+ <!-- <form action="generate_pdf_bill?token<?php// echo $user_id ?>" method="POST"> -->
+         <button>
+         Print Bill
+         <?php
+         header("Location: generate_pdf_bill.php");
+         ?>
+         </button>
+ <!-- </form> -->
    <button>Email Bill</button>
    </div>
                         <?php
