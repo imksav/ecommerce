@@ -40,8 +40,19 @@ include("../helper/connect.php");
                   if($products_all['product_category'] == "men" || $products_all['product_category'] == "women" || $products_all['product_category'] == "child"){
                      ?>
                     <div class="col-4">
+                       <?php
+                       if($products_all['product_quantity']>0){
+                          ?>
                            <a href="product_details.php?token=<?php echo $products_all['id'] ?>"><img src="../admin/<?php echo $products_all['file_path'] ?>">
                            <a href="product_details.php?token=<?php echo $products_all['id'] ?>"><h4><?php echo $products_all['product_name'] ?></h4>
+                       <?php
+                       }else{
+                          ?>
+                           <a href="product_details.php"><img src="../admin/<?php echo $products_all['file_path'] ?>">
+                           <a href="product_details.php"><h4><?php echo $products_all['product_name'] ?></h4>
+                       <?php
+                       }
+                       ?>
                            <?php
                            if($products_all['discount_percent']==0){
                               ?>
@@ -53,7 +64,7 @@ include("../helper/connect.php");
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_all['product_quantity']==0){
+                                 if($products_all['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -78,7 +89,7 @@ include("../helper/connect.php");
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_all['product_quantity']==0){
+                                 if($products_all['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php

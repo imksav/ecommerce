@@ -81,8 +81,19 @@
                   if($products_featured['product_featured'] == "Yes"){
                      ?>
                     <div class="col-4">
+                         <?php
+                       if($products_featured['product_quantity']>0){
+                          ?>
                            <a href="product_details.php?token=<?php echo $products_featured['id'] ?>"><img src="../admin/<?php echo $products_featured['file_path'] ?>">
                            <a href="product_details.php?token=<?php echo $products_featured['id'] ?>"><h4><?php echo $products_featured['product_name'] ?></h4>
+                            <?php
+                       }else{
+                          ?>
+                          <a href="product_details.php"><img src="../admin/<?php echo $products_featured['file_path'] ?>">
+                           <a href="product_details.php"><h4><?php echo $products_featured['product_name'] ?></h4>
+                           <?php
+                           }
+                           ?>
                            <?php
                            if($products_featured['discount_percent']==0){
                               ?>
@@ -94,7 +105,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_featured['product_quantity']==0){
+                                 if($products_featured['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -119,7 +130,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_featured['product_quantity']==0){
+                                 if($products_featured['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -155,8 +166,19 @@
                   if($products_men['product_category'] == "men"){
                      ?>
                     <div class="col-4">
+                            <?php
+                       if($products_men['product_quantity']>0){
+                          ?>
                            <a href="product_details.php?token=<?php echo $products_men['id'] ?>"><img src="../admin/<?php echo $products_men['file_path'] ?>">
                            <a href="product_details.php?token=<?php echo $products_men['id'] ?>"><h4><?php echo $products_men['product_name'] ?></h4>
+                            <?php
+                       }else{
+                          ?>
+                          <a href="product_details.php"><img src="../admin/<?php echo $products_men['file_path'] ?>">
+                           <a href="product_details.php"><h4><?php echo $products_men['product_name'] ?></h4>
+                           <?php
+                           }
+                           ?>
                            <?php
                            if($products_men['discount_percent']==0){
                               ?>
@@ -168,7 +190,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_men['product_quantity']==0){
+                                 if($products_men['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -193,7 +215,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_men['product_quantity']==0){
+                                 if($products_men['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -229,8 +251,19 @@
                   if($products_women['product_category'] == "women"){
                      ?>
                     <div class="col-4">
+                            <?php
+                       if($products_women['product_quantity']>0){
+                          ?>
                            <a href="product_details.php?token=<?php echo $products_women['id'] ?>"><img src="../admin/<?php echo $products_women['file_path'] ?>">
                            <a href="product_details.php?token=<?php echo $products_women['id'] ?>"><h4><?php echo $products_women['product_name'] ?></h4>
+                            <?php
+                       }else{
+                          ?>
+                          <a href="product_details.php"><img src="../admin/<?php echo $products_women['file_path'] ?>">
+                           <a href="product_details.php"><h4><?php echo $products_women['product_name'] ?></h4>
+                           <?php
+                           }
+                           ?>
                            <?php
                            if($products_women['discount_percent']==0){
                               ?>
@@ -242,7 +275,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_women['product_quantity']==0){
+                                 if($products_women['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -267,7 +300,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_women['product_quantity']==0){
+                                 if($products_women['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -303,8 +336,19 @@
                   if($products_children['product_category'] == "child"){
                      ?>
                     <div class="col-4">
+                            <?php
+                       if($products_children['product_quantity']>0){
+                          ?>
                            <a href="product_details.php?token=<?php echo $products_children['id'] ?>"><img src="../admin/<?php echo $products_children['file_path'] ?>">
-                           <a href="product_details.php?token=<?php echo $products_women['id'] ?>"><h4><?php echo $products_children['product_name'] ?></h4>
+                           <a href="product_details.php?token=<?php echo $products_children['id'] ?>"><h4><?php echo $products_children['product_name'] ?></h4>
+                            <?php
+                       }else{
+                          ?>
+                          <a href="product_details.php"><img src="../admin/<?php echo $products_children['file_path'] ?>">
+                           <a href="product_details.php"><h4><?php echo $products_children['product_name'] ?></h4>
+                           <?php
+                           }
+                           ?>
                            <?php
                            if($products_children['discount_percent']==0){
                               ?>
@@ -316,7 +360,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_children['product_quantity']==0){
+                                 if($products_children['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
@@ -341,7 +385,7 @@
                                  <i class="fa fa-star"></i>
                                  <i class="fa fa-star-o"></i>
                                  <?php
-                                 if($products_children['product_quantity']==0){
+                                 if($products_children['product_quantity']<=0){
                                     ?>
                                     <small>Out of Stock</small>
                               <?php
