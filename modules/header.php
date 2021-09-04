@@ -44,7 +44,17 @@
             <p>Login<br>/Register</p> -->
             <!-- <a href="./login.php">  -->
             <? // php session_destroy(); ?>
-            <a href="./login.php"><?//php session_destroy(); ?>Login/Register</a>
+         <?php
+               if(isset($_SESSION['user_login_check'])){
+                  ?>
+               <a href="../helper/logout.php">Hi, <?php echo  $_SESSION['user_login_check']; ?>!</a>
+               <?php
+               }else{
+                  ?>
+                  <a href="./login.php">Hi, Guest!</a>
+               <?php
+               }
+               ?>
             <a href="./cart.php"><img src="../images/cart.png" width="25px" height="25px"></a>
             <!-- <img src="../images/menu.png" class="menu-icon" width="25px" height="25px" onclick="menutoggle()"> -->
          </div>
