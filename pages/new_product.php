@@ -21,12 +21,6 @@
 </head>
 
 <body>
-   <div class="intro">
-      <p style="text-align:center;font-size:30px;color:purple;margin:10px;">Welcome to the WYSIWYG Ecommerce Site</p>
-      <?php
-      include("../modules/sliders.php");
-      ?>
-   </div>
 <form method="POST" action="">
 				<div class="form-inline" style="float:right;margin-right:20px;">
 					<label style="margin:10px;">Category:</label>
@@ -41,7 +35,7 @@
 </form>
 <div class="categories">
    <div class="small-container">
-      <!-- <h1 class="title">All Products</h1> -->
+      <h1 class="title">All Products</h1>
       <div class="row">
          <?php
          if(isset($_POST['filter'])){
@@ -193,6 +187,8 @@
          }else{
             $data = mysqli_query($conn, "SELECT * FROM products");
             while($products_all = mysqli_fetch_assoc($data)){
+                  // print_r($products_featured);
+                  // if($products_featured['product_category'] == "Yes"){
                      ?>
                     <div class="col-4">
                             <?php
@@ -261,12 +257,35 @@
                            ?>
                            </div>
                      <?php
+                  // }
                }
          }
+               // this is end of else if
+               // print_r($fetch);
+               // $filter_data_sql = "SELECT"
                ?>
+      
       </div>
    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Footer -->
      <?php
    include("../modules/footer.php");

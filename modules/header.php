@@ -23,6 +23,10 @@
           <?php
                 session_start();
             ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+               <input type="search" id="search" name="search"  size="20" value="<?php //echo $_GET['search'];  ?>">
+               <input type="submit" value="Search" style="height:auto; width:auto;">
+            </form>
          </div>
          <nav>
             <ul id="MenuItems">
@@ -53,6 +57,15 @@
             <a href="./cart.php"><img src="../images/cart.png" width="25px" height="25px"></a>
             <!-- <img src="../images/menu.png" class="menu-icon" width="25px" height="25px" onclick="menutoggle()"> -->
          </div>
+            <!-- <select>
+            <option>View Default Items</option>
+            <option>View by Category</option>
+            <option>View by Brand</option>
+            <option>View by Price</option>
+         </select> -->
+          <?php
+         //  include("dropdown.php");
+         ?>
       </div>
    </div>
    <!-- header section ends -->

@@ -10,7 +10,8 @@ include("../helper/connect.php");
       <title>Display Details From File Upload</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/style.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
         <style>
          table,
          th,

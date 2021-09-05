@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <style>
@@ -35,4 +35,4 @@ li a:hover {
 </ul>
 
 </body>
-</html>
+</html> -->
