@@ -14,6 +14,7 @@ include("admin_header.php");
    <title>ADD PRODUCTS HERE</title>
 </head>
 <body>
+   <div class="account">
          <h3 style="text-align:center;">============================Adding Products On Your Database============================</h3>
    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" method="POST">
       Category: <select name="product_category" id="category">
@@ -47,6 +48,7 @@ include("admin_header.php");
       <br><br><br>
       <input type="submit" name="upload" value="Submit">
    </form>
+   </div>
    
    <!-- PHP CODES -->
  <?php

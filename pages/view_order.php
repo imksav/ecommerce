@@ -41,7 +41,7 @@ $user_id = $_GET['token'];
          $response = $conn->query($get_cart);
          if($response->num_rows>0){
             while($row=$response->fetch_assoc()){
-               print_r($row);
+               // print_r($row);
                $get_cart_id= $row['id'];
                $get_cart_price = $row['price'];
                $get_cart_product_id = $row['product_id'];
@@ -67,8 +67,8 @@ $user_id = $_GET['token'];
                      $final_quantity_product_table = $get_products_quantity - $get_cart_quantity;
                      $update_products_table_quantity = "UPDATE products SET product_quantity='$final_quantity_product_table' WHERE id=$get_products_product_id";
                      if($conn->query($update_products_table_quantity)==TRUE){
-                        header("Location: checkout.php");
-                        // header("Location: generate_pdf_bill.php");
+                        // header("Location: checkout.php");
+                        header("Location: generate_pdf_bill.php");
                      }
                   // }
                }

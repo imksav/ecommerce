@@ -1,10 +1,9 @@
 <?php
 include("admin_header.php");
-?>
-<!DOCTYPE html>
-<?php
 include("../helper/connect.php");
 ?>
+
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <title>Display Details From File Upload</title>

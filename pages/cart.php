@@ -36,7 +36,7 @@ include("../helper/connect.php");
             $total_price = 0;
             $vat = 13;
             while($row=$cart = mysqli_fetch_assoc($data)) {
-            print_r($cart);
+            // print_r($cart);
                ?>
                   <form action="update_cart.php?token=<?php echo $cart['product_id']?>" method="POST">
                      <tr>
@@ -56,10 +56,10 @@ include("../helper/connect.php");
                            </div>
                         </div>
                      </td>
-                     <td><input type="number" name="product_quantity" value="<?php echo $cart['product_quantity'] ?>"></td>
+                     <td><input type="number" name="product_quantity" value="<?php echo $cart['product_quantity'] ?>" style="width:80px; height:auto; text-align:center"></td>
                      <td>Rs. <?php echo $cart['price'] ?></td>
                      <!-- <input hidden type="text" name="item_id" value="<?php // $cart['product_id'] ?>"> -->
-                     <td><input type="submit" name="update_cart" value="Update" style="width:auto; height:auto; color:white; background-color:purple"></td>
+                     <td><input type="submit" name="update_cart" value="Update" style="width:auto; height:auto; color:white; background-color:purple; text-align:center;"></td>
                   </tr>
                   </form>
                <?php
@@ -69,7 +69,7 @@ include("../helper/connect.php");
                </tr>
             </table>
                         <form action="view_order.php?token=<?php echo $user_id?>" method="POST">
-                           <input type="submit" name="view" value="Check Out">
+                           <input type="submit" name="view" value="Check Out" style="width:auto; height:50px; color:white; background-color:green; margin-left:500px; font-size:20px">
                         </form>
       </table>
    </div>
