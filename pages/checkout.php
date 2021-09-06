@@ -66,7 +66,7 @@
             <table class="demotbl">
                <tr>
                         <td><?php echo $count ?></td>
-                        <td><p><?php echo $cart['id'] ?></p></td>
+                        <td><p><?php echo $cart['product_id'] ?></p></td>
                         <td><p><?php echo $cart['product_name'] ?></p></td>
                         <td><?php echo $cart['product_quantity'] ?></td>
                         <td>Rs. <?php echo $cart['price'] ?></td>
