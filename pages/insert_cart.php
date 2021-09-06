@@ -23,7 +23,7 @@
             echo $sql;
             $run = mysqli_query($conn, $sql);
             if($run){
-            header("Location:./cart.php");
+            header("Location:./new_cart.php");
             die();
             } 
       }

@@ -6,7 +6,7 @@ include("../helper/connect.php");
 <html lang="en">
 
 <head>
-   <title>Cart | WYSIWYG</title>
+   <title>New Cart | WYSIWYG</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="./css/style.css" rel="stylesheet">
@@ -36,8 +36,10 @@ include("../helper/connect.php");
             $total_price = 0;
             $vat = 13;
             while($row=$cart = mysqli_fetch_assoc($data)) {
+            print_r($cart);
                ?>
-                  <tr>
+                  <form action="update_cart.php?token=<?php echo $cart['product_id']?>" method="POST">
+                     <tr>
                      <td>
                         <div class="cart-info">
                            <img src="../admin/<?php echo $cart['image'] ?>">
@@ -54,17 +56,12 @@ include("../helper/connect.php");
                            </div>
                         </div>
                      </td>
-                     <td><?php echo $cart['product_quantity'] ?></td>
+                     <td><input type="number" name="product_quantity" value="<?php echo $cart['product_quantity'] ?>"></td>
                      <td>Rs. <?php echo $cart['price'] ?></td>
-                     <!-- <td>
-                        <form action="confirm_order.php?token=<?php //echo $user_id?>" method="POST">
-                           <input hidden type="text" name="price" value="<?php// echo ($cart['price'] + $cart['price']* ($vat/100)) ?>">
-                           <input hidden type="text" name="product_id" value="<?php //echo $row['product_id'] ?>">
-                           <input hidden type="text" name="product_quantity" value="<?php// echo $row['product_quantity'] ?>">
-                           <input type="submit" name="checkout" value="Check Out">
-                        </form>
-                     </td> -->
+                     <!-- <input hidden type="text" name="item_id" value="<?php // $cart['product_id'] ?>"> -->
+                     <td><input type="submit" name="update_cart" value="Update" style="width:auto; height:auto; color:white; background-color:purple"></td>
                   </tr>
+                  </form>
                <?php
                // $total_price = $total_price+($cart['price']);
             }
@@ -89,56 +86,6 @@ include("../helper/connect.php");
                <?php
                }
             ?>
-   <!-- <div class="small-container cart-page">
-      <table>
-         <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Sub Total</th>
-         </tr>
-         <?php 
-            // $data = mysqli_query($conn, "SELECT * FROM cart");
-            // $total_price = 0;
-            // $vat = 13;
-            // while($cart = mysqli_fetch_assoc($data)) {
-               ?>
-                  <tr>
-                     <td>
-                        <div class="cart-info">
-                           <img src="../admin/<?//php echo $cart['image'] ?>">
-                           <div>
-                              <p><?//php echo $cart['product_name'] ?></p>
-                              <small>Price: Rs. <?//php echo $cart['price'] ?></small>
-                              <br>
-                              <small><?//php echo $cart['size'] ?></small>
-                              <br>
-                              <a href=""><i class="fa fa-trash"></i></a>
-                           </div>
-                        </div>
-                     </td>
-                     <td><?//php echo $cart['product_quantity'] ?></td>
-                     <td>Rs. <?//php echo $cart['price'] * $cart['product_quantity'] ?></td>
-                  </tr>
-               <?//php
-               //$total_price = $total_price+($cart['price']*$cart['product_quantity']);
-            //}
-            ?>
-            <table>
-               <tr>
-                  <th>Total</th>
-                  <th>VAT Amount</th>
-                  <th>Grand Total</th>
-                  <th>Action</th>
-               </tr>
-               <tr>
-                  <td><?//php echo $total_price ?></td>
-                  <td><?//php echo $total_price* ($vat/100) ?></td>
-                  <td><?//php echo $total_price + $total_price* ($vat/100) ?></td>
-                  <td><button>Buy</button></td>
-               </tr>
-            </table>
-      </table>
-   </div> -->
   
    <!-- ------------------------------------footer starts------------------------------------ -->
    <?php
@@ -148,15 +95,6 @@ include("../helper/connect.php");
    <script>
    var MenuItems = document.getElementById("MenuItems");
    MenuItems.style.maxHeight = "0px";
-
-   // function menutoggle() {
-   //    if (MenuItems.style.maxHeight == "0px") {
-   //       MenuItems.style.maxBlockSize = "200px";
-   //    } else {
-   //       MenuItems.style.maxHeight = "0px";
-   //    }
-   // }
    </script>
-   <!-- <script src="./ap1.js"></script> -->
 </body>
 </html>

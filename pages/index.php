@@ -24,7 +24,7 @@
    <div class="intro">
       <p style="text-align:center;font-size:30px;color:purple;margin:10px;">Welcome to the WYSIWYG Ecommerce Site</p>
       <?php
-      include("../modules/sliders.php");
+      // include("../modules/sliders.php");
       ?>
    </div>
 <form method="POST" action="">

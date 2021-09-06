@@ -32,7 +32,7 @@
             <ul id="MenuItems">
                <li><a href="./index.php">Home</a></li>
                <li><a href="./about.php">About Us</a></li>
-               <li><a href="./product.php">Our Products</a></li>
+               <!-- <li><a href="./product.php">Our Products</a></li> -->
                <li><a href="./contact.php">Contact Us</a></li>
                <li>
                </li>
@@ -57,14 +57,7 @@
             <a href="./cart.php"><img src="../images/cart.png" width="25px" height="25px"></a>
             <!-- <img src="../images/menu.png" class="menu-icon" width="25px" height="25px" onclick="menutoggle()"> -->
          </div>
-            <!-- <select>
-            <option>View Default Items</option>
-            <option>View by Category</option>
-            <option>View by Brand</option>
-            <option>View by Price</option>
-         </select> -->
           <?php
-         //  include("dropdown.php");
          ?>
       </div>
    </div>
