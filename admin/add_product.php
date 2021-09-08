@@ -8,48 +8,73 @@ include("admin_header.php");
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <!-- <link rel="stylesheet" href="admin.css"> -->
+   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+   <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
 
    <title>ADD PRODUCTS HERE</title>
 </head>
 <body>
    <div class="account">
          <h3 style="text-align:center;">============================Adding Products On Your Database============================</h3>
-   <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" method="POST">
-      Category: <select name="product_category" id="category">
-         <!-- <option value="select the category">Select the Category</option> -->
-         <option value="men" name="men">Men's</option>
-         <option value="women" name="women">Women's</option>
-         <option value="child" name="child">Child's</option>
-      </select>
-      <br><br>
-      Brand: <input type="text" name="product_brand" placeholder="Enter brand name.............">
-      <br><br>
-      Product Name: <input type="text" name="product_name" placeholder="Enter product name.............">
-      <br><br>
-      Product Description:
-      <br>
-      <textarea name="product_description" placeholder="Enter product description............."  cols="80" rows="5"></textarea>
-      <!-- <input type="text" name="product_description" placeholder="Enter product description............."> -->
-      <br><br>
-      Is Featured: 
-      <br><input type="radio" name="product_featured" value="Yes" checked>Yes
-      <br><input type="radio" name="product_featured" value="No">No
-      <br><br>
-      Quantity: <input type="number" name="product_quantity" placeholder="Enter product quantity.............">
-      <br><br>
-      Marked Price: <input type="number" name="marked_price" placeholder="Enter marked price.............">
-      <br><br>
-      Discount Percent: <input type="number" name="discount_percent" placeholder="Enter discount percent.............">
-      <br><br>
-      <p>Select File</p>
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <br><br><br>
-      <input type="submit" name="upload" value="Submit">
-   </form>
    </div>
    
+   <!-- Bootwatch Darkly -->
+   <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data" method="POST">
+  <fieldset>
+    <div class="form-group">
+      <label for="exampleSelect1" class="form-label mt-4">Product Category</label>
+      <select class="form-select" name="product_category" id="category">
+        <option value="men" name="men">Men</option>
+        <option value="women" name="wommen">Women</option>
+        <option value="child" name="child">Child</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="brand" class="form-label mt-4">Product Brand</label>
+      <input type="text" class="form-control"  name="product_brand" placeholder="Enter brand name........">
+    </div>
+    <div class="form-group">
+      <label for="name" class="form-label mt-4">Product Name</label>
+      <input type="text" class="form-control"  name="product_name" placeholder="Enter product name........">
+    </div>    
+    <div class="form-group">
+      <label for="description" class="form-label mt-4">Product Description</label>
+      <textarea class="form-control" name="product_description" placeholder="Enter product description............." rows="3"></textarea>
+    </div>
+    <fieldset class="form-group">
+      <legend class="mt-4">Radio buttons</legend>
+      <div class="form-check">
+         <label class="form-check-label">
+         <input type="radio" class="form-check-input" name="product_featured" value="Yes" checked="">Yes
+         </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+         <input type="radio" class="form-check-input" name="product_featured" value="No">No
+         </label>
+      </div>
+    <div class="form-group">
+      <label for="formFile" class="form-label mt-4">Select Product Image</label>
+      <input class="form-control" type="file" name="fileToUpload" id="fileToUpload">
+    </div>
+    </fieldset>
+        <div class="form-group">
+      <label for="quantity" class="form-label mt-4">Product Quantity</label>
+      <input type="number" class="form-control" name="product_quantity" placeholder="Enter product quantity.............">
+    </div>
+        <div class="form-group">
+      <label for="mp" class="form-label mt-4">Marked Price</label>
+      <input type="number" class="form-control"  name="marked_price" placeholder="Enter marked price.............">
+    </div>
+        <div class="form-group">
+      <label for="discount" class="form-label mt-4">Discount Percent</label>
+      <input type="number" class="form-control"  name="discount_percent" placeholder="Enter discount percent.............">
+    </div>
+    <button type="submit" class="btn btn-primary" name="upload" value="Submit">Submit</button>
+  </fieldset>
+</form>
+   <!-- Ends -->
    <!-- PHP CODES -->
  <?php
    $_target_dir = "product_image/";
@@ -92,3 +117,4 @@ include("admin_header.php");
 
 </body>
 </html>
+

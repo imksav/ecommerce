@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2021 at 07:37 PM
+-- Generation Time: Sep 08, 2021 at 03:53 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -77,7 +77,8 @@ INSERT INTO `cart` (`id`, `product_id`, `user_id`, `product_name`, `product_quan
 (365, 53, 2, 'test2', '10', 'Extra Large', '33840', 'product_image/gp6.jpg', 'ordered'),
 (366, 52, 2, 'test1', '-5', 'Extra Large', '-9375', 'product_image/gp5.jpg', 'ordered'),
 (367, 62, 2, 'tesmen3', '1', 'Extra Large', '4100', 'product_image/welcome-right.png', 'ordered'),
-(370, 52, 2, 'test1', '10', 'Extra Large', '18750', 'product_image/gp5.jpg', 'ordered');
+(370, 52, 2, 'test1', '10', 'Extra Large', '18750', 'product_image/gp5.jpg', 'ordered'),
+(371, 52, 2, 'test1', '10', 'Extra Large', '18750', 'product_image/gp5.jpg', 'ordered');
 
 -- --------------------------------------------------------
 
@@ -104,15 +105,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_category`, `product_brand`, `product_name`, `product_description`, `product_featured`, `product_quantity`, `marked_price`, `discount_percent`, `file_path`, `created_date`) VALUES
-(52, 'men', 'test1', 'test1', 'test1', 'Yes', '932', '2500', '25', 'product_image/gp5.jpg', '2021-09-06 17:32:09.666183'),
+(52, 'men', 'test1', 'test1', 'test1', 'Yes', '922', '2500', '25', 'product_image/gp5.jpg', '2021-09-07 01:50:03.241981'),
 (53, 'women', 'test2', 'test2', 'test2', 'No', '664', '3600', '664', 'product_image/psbsLogo.png', '2021-09-06 17:35:02.348647'),
 (55, 'women', 'Honkong', 'Saari', 'Honkong saari with priyanka chopra', 'No', '599', '45000', '599', 'product_image/logo.png', '2021-09-06 17:35:33.490516'),
 (56, 'women', 'priyanka', 'One Piece', 'One piece red', 'No', '200', '2500', '2', 'product_image/butterfly.png', '2021-09-06 17:35:56.311197'),
 (57, 'child', 'baby', 'Baby1', 'Baby1', 'No', '36', '2450', '2', 'product_image/gp11.jpg', '2021-09-05 12:37:25.233984'),
 (58, 'child', 'baby', 'Baby2', 'Baby2', 'Yes', '367', '2560', '2', 'product_image/gp9.jpg', '2021-09-06 12:27:29.775089'),
-(59, 'child', 'Baby', 'Baby3', 'Baby3', 'No', '20', '2600', '2', 'product_image/user.png', '2021-09-05 16:06:38.832044'),
+(59, 'child', 'Baby', 'Baby3', 'BBBBBBBAAAAAABBBBBBYYYYY', 'Yes', '20', '2600', '8', 'product_image/Screenshot (5).png', '2021-09-08 13:51:51.887326'),
 (61, 'men', 'testmen2', 'testmen2', 'testmen2', 'No', '60', '2633', '0', 'product_image/welcome-left.png', '2021-09-05 15:10:15.708053'),
-(62, 'men', 'testmen', 'tesmen3', 'testmen3', 'No', '40', '4100', '0', 'product_image/welcome-right.png', '2021-09-06 17:01:00.334007');
+(62, 'men', 'testmen', 'tesmen3', 'testmen3', 'No', '40', '4100', '0', 'product_image/welcome-right.png', '2021-09-06 17:01:00.334007'),
+(64, 'women', 'Bootstrap', 'Test Bootstarp', 'Testtt completed', 'Yes', '300', '300', '3', 'product_image/Screenshot (28).png', '2021-09-08 13:52:53.258176');
 
 -- --------------------------------------------------------
 
@@ -185,13 +187,13 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=371;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=373;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `users`
